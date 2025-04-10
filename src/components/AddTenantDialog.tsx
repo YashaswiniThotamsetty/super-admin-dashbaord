@@ -58,10 +58,13 @@ export function AddTenantDialog({ onTenantCreated }: TenantDialogProps) {
   const onSubmit = async (values: TenantFormValues) => {
     setIsSubmitting(true);
     try {
-      const response = await createTenant({
+      // Fix: Use values as the base and add the role to it, ensuring all required fields are present
+      const tenantData = {
         ...values,
-        role: "ADMIN", // Default role
-      });
+        role: "ADMIN" // Default role
+      };
+      
+      const response = await createTenant(tenantData);
       setCreatedTenant(response);
       form.reset();
       toast({

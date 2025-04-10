@@ -32,7 +32,11 @@ const Login = () => {
   const onSubmit = async (values: LoginFormValues) => {
     setIsSubmitting(true);
     try {
-      await login(values);
+      // Fix: Explicitly pass the required fields to ensure they're not optional
+      await login({
+        email: values.email,
+        password: values.password
+      });
     } catch (error) {
       console.error("Login error:", error);
     } finally {

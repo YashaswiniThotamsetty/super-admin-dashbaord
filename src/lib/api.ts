@@ -3,7 +3,7 @@ import { getAccessToken, getRefreshToken, setAuthTokens, clearTokens } from './a
 
 const API_URL = 'http://localhost:8080/api';
 
-interface LoginCredentials {
+export interface LoginCredentials {
   email: string;
   password: string;
 }
