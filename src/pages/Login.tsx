@@ -12,7 +12,9 @@ import { Loader2 } from "lucide-react";
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters" }),
+
+  //TODO change this to 15
+  password: z.string().min(2, { message: "Password must be at least 6 characters" }),
 });
 
 type LoginFormValues = z.infer<typeof loginSchema>;
