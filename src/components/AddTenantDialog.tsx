@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
-import { createTenant, TenantCreationResponse } from "@/lib/api";
+import { createTenant, TenantCreationResponse, NewTenant } from "@/lib/api";
 
 const tenantSchema = z.object({
   companyName: z.string().min(2, "Company name is required"),
@@ -58,10 +58,13 @@ export function AddTenantDialog({ onTenantCreated }: TenantDialogProps) {
   const onSubmit = async (values: TenantFormValues) => {
     setIsSubmitting(true);
     try {
-      // Fix: Use values as the base and add the role to it, ensuring all required fields are present
-      const tenantData = {
-        ...values,
-        role: "ADMIN" // Default role
+      // Create a properly typed NewTenant object
+      const tenantData: NewTenant = {
+        companyName: values.companyName,
+        contactEmail: values.contactEmail,
+        adminName: values.adminName,
+        adminEmail: values.adminEmail,
+        role: "ADMIN" // Optional field
       };
       
       const response = await createTenant(tenantData);
