@@ -1,7 +1,7 @@
 
 import { getAccessToken, getRefreshToken, setAuthTokens, clearTokens } from './auth';
 
-const API_URL = 'http://localhost:8080/api';
+const API_URL = 'https://sasyak-backend.onrender.com/api';
 
 export interface LoginCredentials {
   email: string;
