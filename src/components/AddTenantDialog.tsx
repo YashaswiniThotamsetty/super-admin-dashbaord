@@ -140,61 +140,61 @@ export function AddTenantDialog({ onTenantCreated }: TenantDialogProps) {
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 py-4">
                 <FormField
-                  control={form.control}
-                  name="companyName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Company Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Acme Corporation" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="contactEmail"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Company Contact Email</FormLabel>
-                      <FormControl>
-                        <Input placeholder="contact@company.com" type="email" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <div className="border-t border-gray-200 my-4 pt-4">
-                  <h3 className="font-medium mb-2">Admin Account</h3>
-                </div>
-                <FormField
-                  control={form.control}
-                  name="adminName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Admin Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="John Doe" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="adminEmail"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Admin Email</FormLabel>
-                      <FormControl>
-                        <Input placeholder="admin@company.com" type="email" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <DialogFooter className="pt-4">
+  control={form.control}
+  name="companyName"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Company Name</FormLabel>
+      <FormControl>
+        <Input placeholder="Enter company name" {...field} />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+
+<FormField
+  control={form.control}
+  name="contactEmail"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Company Contact Email</FormLabel>
+      <FormControl>
+        <Input placeholder="Enter company contact email" type="email" {...field} />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+
+<FormField
+  control={form.control}
+  name="adminName"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Admin Name</FormLabel>
+      <FormControl>
+        <Input placeholder="Enter admin full name" {...field} />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+
+<FormField
+  control={form.control}
+  name="adminEmail"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Admin Email</FormLabel>
+      <FormControl>
+        <Input placeholder="Enter admin email" type="email" {...field} />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+      <DialogFooter className="pt-4">
                   <Button type="button" variant="outline" onClick={handleClose}>
                     Cancel
                   </Button>
