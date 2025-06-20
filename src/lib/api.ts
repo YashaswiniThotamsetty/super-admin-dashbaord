@@ -1,7 +1,7 @@
 
 import { getAccessToken, getRefreshToken, setAuthTokens, clearTokens } from './auth';
 
-const API_URL = 'https://sasyak-backend.onrender.com/api';
+const API_URL = 'https://sasyakapi.kapilagro.com/api';
 
 export interface LoginCredentials {
   email: string;
